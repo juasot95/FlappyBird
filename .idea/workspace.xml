@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7c8f2ac-d50c-4242-878b-28b460f35cc2" name="Changes" comment="Modifications&#10;- Add sound when win the gold medal" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="SOUND" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;juasot95&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/juasot95/FlappyBird&quot;,
+    &quot;accountId&quot;: &quot;e5155e0e-c9d2-43f1-bd66-c27c884712a3&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2roIOXSRwvBR8rmvx064FovArDU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Desktop/python/FlappyBird/assets&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Desktop\python\FlappyBird\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Desktop\python\FlappyBird\assets\sound" />
+      <recent name="C:\Users\admin\Desktop\python\FlappyBird\assets\spritesheet" />
+      <recent name="C:\Users\admin\Desktop\python\FlappyBird\utils\ui" />
+      <recent name="C:\Users\admin\Desktop\python\FlappyBird\utils\game_insight" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="game" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.game" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-337b0a7a993a-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.19416.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7c8f2ac-d50c-4242-878b-28b460f35cc2" name="Changes" comment="" />
+      <created>1737218968428</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737218968428</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Modifications&#10;- Add sound to the game&#10;- Reorganize the code files">
+      <option name="closed" value="true" />
+      <created>1737226220975</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737226220975</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modifications&#10;- Add the increment score sound effect">
+      <option name="closed" value="true" />
+      <created>1737227493915</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737227493915</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modifications&#10;- Add the loss sound effect">
+      <option name="closed" value="true" />
+      <created>1737227561545</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737227561545</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Modifications&#10;- Add loss animation">
+      <option name="closed" value="true" />
+      <created>1737233751570</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737233751570</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modifications&#10;- Add sound effect when a button is pressed">
+      <option name="closed" value="true" />
+      <created>1737236246852</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737236246852</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modifications&#10;- Add sound when win the gold medal">
+      <option name="closed" value="true" />
+      <created>1737237463891</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737237463891</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="SOUND" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Sound" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/SOUND" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modifications&#10;- Add sound to the game&#10;- Reorganize the code files" />
+    <MESSAGE value="Modifications&#10;- Add the increment score sound effect" />
+    <MESSAGE value="Modifications&#10;- Add the loss sound effect" />
+    <MESSAGE value="Modifications&#10;- Add loss animation" />
+    <MESSAGE value="Modifications&#10;- Add sound effect when a button is pressed" />
+    <MESSAGE value="Modifications&#10;- Add sound when win the gold medal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifications&#10;- Add sound when win the gold medal" />
+  </component>
+</project>
