@@ -25,6 +25,7 @@ class GameWorld(State):
         # Pause button
         self.pause_button = PauseButton(game, (50, 25))
 
+    @property
     def lost(self):
         collision_pipe = pygame.sprite.spritecollide(self.player, self.pipes.sprite_group, False,
                                                 collided=pygame.sprite.collide_mask)
@@ -72,8 +73,9 @@ class GameWorld(State):
             self.pipes.update(delta_time)
             self.ground.update(delta_time)
             self.score.update()
-            if self.lost():
+            if self.lost:
                 # print('LOST')
+                self.game.sound_handler.lose()
                 # enter in game_over state (game_world -> game_over)
                 game_over = GameOver(self.game, self.score, self.last_best_score)
                 game_over.enter_state()
