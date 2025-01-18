@@ -21,6 +21,9 @@ class Game:
         self.screen = pygame.display.set_mode((width, height))
         self.game_canvas = pygame.Surface((width, height))
 
+        # Instantiate the SoundHandler
+        self.sound_handler = SoundHandler()
+
         # Set running to True for the game loop
         self.running = True
         self.actions = {'left': False, 'right': False, 'up': False, 'down': False, 'start': False, 'pause': False}
@@ -38,9 +41,6 @@ class Game:
         self.data = self.load_data()
         self.load_assets()
         self.load_states()
-
-        # Instantiate the SoundHandler
-        self.sound_handler = SoundHandler()
 
         # Store best score
         self.best_score = self.data['best_score']
@@ -162,10 +162,9 @@ class Game:
         load the fonts and the sprites_sheet
         :return:
         """
-
         self.title_font = pygame.font.Font(None, 52)
         self.font = pygame.font.Font(None, 20)
-        self.sprites_dir = os.path.join('assets', 'flappy_sprites.png')
+        self.sprites_dir = os.path.join('assets', 'spritesheet', 'flappy_sprites.png')
         self.sprites_sheet = pygame.image.load(self.sprites_dir).convert_alpha()
         self.icon = pygame.Surface((17, 17))
         self.icon.set_colorkey('#000000')

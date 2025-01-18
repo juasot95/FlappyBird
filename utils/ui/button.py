@@ -1,5 +1,6 @@
 import pygame
 from typing import override
+from utils.sound.sound import SoundHandler
 
 
 class Button(pygame.sprite.Sprite):
@@ -62,7 +63,9 @@ class Button(pygame.sprite.Sprite):
         on_button = self.rect.collidepoint(*mouse_pos)
         clicked = pygame.mouse.get_pressed()[0]
         if on_button and clicked:
-            self.pressed = True
+            if not self.pressed:
+                SoundHandler.click()
+                self.pressed = True
             return True
         return False
 
