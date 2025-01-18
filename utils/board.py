@@ -4,6 +4,7 @@ import states.game_over
 from utils.canvas import Canvas
 from utils.ui.flag import Flag
 from utils.ui.medal import Medal
+from utils.sound.sound import SoundHandler
 
 
 class Board:
@@ -49,11 +50,10 @@ class Board:
     def choose_medal(self):
         if self.game.current_state.new_best_score:
             self.medal.choose('gold')
-        elif self.score.current_score > self.mean(
-                self.score.best_score * 0.9, self.game.current_state.mean_score) * 0.8:
+            SoundHandler.win()
+        elif self.score.current_score > self.score.best_score * 0.75 + self.game.current_state.mean_score * 0.25:
             self.medal.choose('silver')
-        elif self.score.current_score > self.mean(
-                self.score.best_score * 0.9, self.game.current_state.mean_score) * 0.2:
+        elif self.score.current_score > self.score.best_score * 0.25 + self.game.current_state.mean_score * 0.75:
             self.medal.choose('bronze')
 
     def update(self, delta_time):
@@ -67,7 +67,7 @@ class Board:
             if self.game.current_state.new_best_score:
                 self.new_flag.update(delta_time=delta_time)
         # update the medal
-        self.choose_medal()
+        # self.choose_medal()
         self.medal.update(delta_time)
 
     def render(self, surface: pygame.Surface):
