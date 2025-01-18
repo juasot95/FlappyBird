@@ -2,8 +2,8 @@ import pygame
 
 from states.state import State
 from utils.board import Board
-from utils.button import Button
-from utils.flag import Flag
+from utils.ui.button import Button
+from utils.ui.flag import Flag
 
 
 class GameOver(State):

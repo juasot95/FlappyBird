@@ -2,8 +2,8 @@ import pygame
 
 import states.game_over
 from utils.canvas import Canvas
-from utils.flag import Flag
-from utils.medal import Medal
+from utils.ui.flag import Flag
+from utils.ui.medal import Medal
 
 
 class Board:

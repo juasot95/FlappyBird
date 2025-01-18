@@ -3,6 +3,8 @@ import os
 import time
 import json
 
+from utils.sound.sound import SoundHandler
+
 import states.state
 from states.menu import Menu
 from states.game_world import GameWorld
@@ -36,6 +38,9 @@ class Game:
         self.data = self.load_data()
         self.load_assets()
         self.load_states()
+
+        # Instantiate the SoundHandler
+        self.sound_handler = SoundHandler()
 
         # Store best score
         self.best_score = self.data['best_score']

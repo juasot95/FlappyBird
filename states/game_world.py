@@ -1,13 +1,12 @@
-import pygame, os
+import pygame
 
-import utils.button
 from states.state import State
 from states.game_over import GameOver
 from states.pause import Pause
 
-from utils.pipe import Pipe, PipeGroup
-from utils.score import Score
-from utils.button import PauseButton
+from utils.game_insight.pipe import Pipe, PipeGroup
+from utils.ui.score import Score
+from utils.ui.button import PauseButton
 
 
 class GameWorld(State):
