@@ -38,13 +38,13 @@ class Player(pygame.sprite.Sprite):
             images.append(image)
         return images
 
-    def move(self, delta_time):
+    def move(self, delta_time, jump_allowed=True):
         # gravity and jump
 
         if isinstance(self.game_world, states.game_world.GameWorld):
             self.apply_gravity(delta_time)
-            if pygame.mouse.get_pressed()[0]\
-                    or self.game_world.game.actions['start']:
+            jumped: bool = pygame.mouse.get_pressed()[0] or self.game_world.game.actions['start']
+            if jumped and jump_allowed:
                 self.jump()
             '''
             speed = 2
@@ -108,9 +108,10 @@ class Player(pygame.sprite.Sprite):
     def update_mask(self):
         self.mask = pygame.mask.from_surface(self.image)
 
-    def update(self, delta_time) -> None:
-        self.move(delta_time)
-        self.animate(delta_time)
+    def update(self, delta_time, dead=False) -> None:
+        self.move(delta_time, jump_allowed=not dead)
+        if not dead:
+            self.animate(delta_time)
 
     def render(self, surface: pygame.Surface) -> None:
         surface.blit(self.image, self.rect)
