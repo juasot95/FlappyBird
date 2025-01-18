@@ -108,6 +108,9 @@ class PipeGroup(list):
             pipe.update(*args, **kwargs)
         # Handle player score
         if (nearest_pipe := self.nearest_pipe(self.reward_pipes)).rect.left < self.game_world.player.rect.centerx:
+            # Play the sound effect
+            self.game_world.game.sound_handler.increment_score()
+            # Modify the score
             self.game_world.player.current_score += nearest_pipe.reward
             nearest_pipe.reward = 0
             # print(self.game_world.player.current_score)
