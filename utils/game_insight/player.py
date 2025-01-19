@@ -14,9 +14,10 @@ class Player(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image)
 
         # Motion
+        self.jumping = False
         self.pos = pygame.Vector2(x, y)
         self.velocity = pygame.Vector2(0, 0)
-        self.jump_vector = pygame.Vector2(0, -2.5)  # pygame.Vector2(0, -25)  # pygame.Vector2(0, -2.5)
+        self.jump_vector = pygame.Vector2(0, -3.5)  # pygame.Vector2(0, -25)  # pygame.Vector2(0, -2.5)
 
         # Animation
         self.current_frame = 0
@@ -37,13 +38,13 @@ class Player(pygame.sprite.Sprite):
             images.append(image)
         return images
 
-    def move(self, delta_time):
+    def move(self, delta_time, jump_allowed=True):
         # gravity and jump
 
         if isinstance(self.game_world, states.game_world.GameWorld):
             self.apply_gravity(delta_time)
-            if pygame.mouse.get_pressed()[0]\
-                    or self.game_world.game.actions['start']:
+            jumped: bool = pygame.mouse.get_pressed()[0] or self.game_world.game.actions['start']
+            if jumped and jump_allowed:
                 self.jump()
             '''
             speed = 2
@@ -65,7 +66,12 @@ class Player(pygame.sprite.Sprite):
         self.velocity.y -= self.game_world.GRAVITY * delta_time
 
     def jump(self) -> None:
-        self.velocity.y = self.jump_vector.y
+        if not self.jumping:
+            self.jumping = True
+            self.velocity.y = self.jump_vector.y
+            self.game_world.game.sound_handler.jump()
+        elif self.velocity.y > 0:
+            self.jumping = False
 
     @property
     def current_image(self):
@@ -102,9 +108,10 @@ class Player(pygame.sprite.Sprite):
     def update_mask(self):
         self.mask = pygame.mask.from_surface(self.image)
 
-    def update(self, delta_time) -> None:
-        self.move(delta_time)
-        self.animate(delta_time)
+    def update(self, delta_time, dead=False) -> None:
+        self.move(delta_time, jump_allowed=not dead)
+        if not dead:
+            self.animate(delta_time)
 
     def render(self, surface: pygame.Surface) -> None:
         surface.blit(self.image, self.rect)

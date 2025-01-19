@@ -1,13 +1,12 @@
-import pygame, os
+import pygame
 
-import utils.button
 from states.state import State
 from states.game_over import GameOver
 from states.pause import Pause
 
-from utils.pipe import Pipe, PipeGroup
-from utils.score import Score
-from utils.button import PauseButton
+from utils.game_insight.pipe import Pipe, PipeGroup
+from utils.ui.score import Score
+from utils.ui.button import PauseButton
 
 
 class GameWorld(State):
@@ -15,6 +14,8 @@ class GameWorld(State):
         State.__init__(self, game)
         self.GRAVITY = -15  # - 150  # 15
         self.speed = speed
+        self.playing = True
+
         # self.player = Player(self, x=self.game.WIDTH//4, y=self.game.HEIGHT//2)
         self.player = player
         # Pipe group and the ground
@@ -26,12 +27,29 @@ class GameWorld(State):
         # Pause button
         self.pause_button = PauseButton(game, (50, 25))
 
+    @property
+    def collision(self) -> bool:
+        """return True if the player has collided with a pipe"""
+        return pygame.sprite.spritecollide(self.player, self.pipes.sprite_group, False,
+                                           collided=pygame.sprite.collide_mask)  # NOQA
+
+    @property
+    def on_ground(self) -> bool:
+        """returns True if the players has collided with the ground"""
+        beneath_the_ground: bool = self.player.pos.y > self.ground.top_left.y
+        collision = pygame.sprite.spritecollide(self.player, self.ground.group, False,
+                                                collided=pygame.sprite.collide_mask)  # NOQA
+        return beneath_the_ground or collision
+
+    @property
+    def above_screen(self) -> bool:
+        """returns True if the player is above the screen"""
+        above = self.player.pos.y < 0
+        return above
+
+    @property
     def lost(self):
-        collision_pipe = pygame.sprite.spritecollide(self.player, self.pipes.sprite_group, False,
-                                                collided=pygame.sprite.collide_mask)
-        collision_ground = pygame.sprite.spritecollide(self.player, self.ground.group, False,
-                                                       collided=pygame.sprite.collide_mask)
-        return collision_pipe or collision_ground
+        return self.collision or self.on_ground or self.above_screen
 
     def update(self, delta_time: float, actions: list) -> None:
         ########################
@@ -69,15 +87,21 @@ class GameWorld(State):
 
         # updates that are specific to the game
         if isinstance(self.game.current_state, GameWorld):
-            self.player.update(delta_time)
-            self.pipes.update(delta_time)
-            self.ground.update(delta_time)
-            self.score.update()
-            if self.lost():
+            if self.on_ground:
+                self.player.pos.y = min(self.player.pos.y+self.player.rect.h//2, self.ground.top_left.y)
                 # print('LOST')
+                self.game.sound_handler.lose()
                 # enter in game_over state (game_world -> game_over)
                 game_over = GameOver(self.game, self.score, self.last_best_score)
                 game_over.enter_state()
+            elif self.lost or not self.playing:
+                self.playing = False
+                self.player.update(delta_time, dead=True)
+            else:
+                self.player.update(delta_time)
+                self.pipes.update(delta_time)
+                self.ground.update(delta_time)
+                self.score.update()
 
     def render(self, surface: pygame.Surface) -> None:
         self.prev_state.render(self.game.game_canvas)

@@ -1,5 +1,5 @@
 import pygame
-from utils.particle import Particle, ParticleGroup
+from utils.ui.particle import Particle, ParticleGroup
 
 
 class Medal:

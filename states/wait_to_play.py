@@ -1,9 +1,9 @@
 import pygame
 from states.state import State
 from states.game_world import GameWorld
-from utils.player import Player
-from utils.ground import Ground
-from utils.flag import Flag
+from utils.game_insight.player import Player
+from utils.game_insight.ground import Ground
+from utils.ui.flag import Flag
 
 
 class WaitToPlay(State):

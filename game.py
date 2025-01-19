@@ -3,6 +3,8 @@ import os
 import time
 import json
 
+from utils.sound.sound import SoundHandler
+
 import states.state
 from states.menu import Menu
 from states.game_world import GameWorld
@@ -18,6 +20,9 @@ class Game:
         pygame.display.set_caption('Flappy Bird')
         self.screen = pygame.display.set_mode((width, height))
         self.game_canvas = pygame.Surface((width, height))
+
+        # Instantiate the SoundHandler
+        self.sound_handler = SoundHandler()
 
         # Set running to True for the game loop
         self.running = True
@@ -157,10 +162,9 @@ class Game:
         load the fonts and the sprites_sheet
         :return:
         """
-
         self.title_font = pygame.font.Font(None, 52)
         self.font = pygame.font.Font(None, 20)
-        self.sprites_dir = os.path.join('assets', 'flappy_sprites.png')
+        self.sprites_dir = os.path.join('assets', 'spritesheet', 'flappy_sprites.png')
         self.sprites_sheet = pygame.image.load(self.sprites_dir).convert_alpha()
         self.icon = pygame.Surface((17, 17))
         self.icon.set_colorkey('#000000')
