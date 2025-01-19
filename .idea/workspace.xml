@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7c8f2ac-d50c-4242-878b-28b460f35cc2" name="Changes" comment="Modifications&#10;- Add sound when win the gold medal" />
+    <list default="true" id="a7c8f2ac-d50c-4242-878b-28b460f35cc2" name="Changes" comment="reset the data file">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,12 +27,20 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;juasot95&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "assignee": "juasot95",
+      "author": "juasot95"
+    },
+    {
+      "assignee": "juasot95"
+    }
+  ],
+  "lastFilter": {
+    "assignee": "juasot95"
   }
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/juasot95/FlappyBird&quot;,
@@ -50,6 +60,7 @@
     &quot;Python.game.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/Desktop/python/FlappyBird/assets&quot;
   }
 }</component>
@@ -158,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737237463891</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="reset the data file">
+      <option name="closed" value="true" />
+      <created>1737314494606</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737314494607</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,12 +206,17 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/SOUND" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -211,6 +235,7 @@
     <MESSAGE value="Modifications&#10;- Add loss animation" />
     <MESSAGE value="Modifications&#10;- Add sound effect when a button is pressed" />
     <MESSAGE value="Modifications&#10;- Add sound when win the gold medal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modifications&#10;- Add sound when win the gold medal" />
+    <MESSAGE value="reset the data file" />
+    <option name="LAST_COMMIT_MESSAGE" value="reset the data file" />
   </component>
 </project>

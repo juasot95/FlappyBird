@@ -1,10 +1,11 @@
 import pygame
+from utils.sound.sound import SoundHandler
 
 
 class State:
     def __init__(self, game):
         self.game = game
-        self. prev_state = None
+        self.prev_state = None
 
     def update(self, delta_time: float, actions: list) -> None:
         pass

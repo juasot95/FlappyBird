@@ -2,13 +2,14 @@ import pygame
 
 from states.state import State
 from utils.board import Board
-from utils.button import Button
-from utils.flag import Flag
+from utils.ui.button import Button
+from utils.ui.flag import Flag
 
 
 class GameOver(State):
     def __init__(self, game, score, last_best_score):
         State.__init__(self, game)
+        self.medal_updated = False
         self.score = score
         self.last_best_score = last_best_score
         self.new_best_score: bool = self.game.best_score > last_best_score
@@ -29,10 +30,15 @@ class GameOver(State):
         return sum(args) / len(args)
 
     def update(self, delta_time: float, actions: list) -> None:
+        if not self.medal_updated:
+            self.board.choose_medal()
+            self.medal_updated = True
         self.board.update(delta_time=delta_time)
         self.game_over_flag.update(delta_time)
 
         if (self.button_ok.is_released() or self.game.actions['start']) and self.button_ok.active:
+            # reset the medal updating
+            self.medal_updated = False
             # exit from game over state -> playing state
             self.exit_state()
             # exit from playing state -> menu state

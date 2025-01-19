@@ -2,8 +2,8 @@ import pygame
 
 from states.state import State
 from states.wait_to_play import WaitToPlay
-from utils.button import Button
-from utils.flag import Flag
+from utils.ui.button import Button
+from utils.ui.flag import Flag
 
 
 class Menu(State):
